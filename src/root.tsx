@@ -16,8 +16,6 @@ export default component$(() => {
       <head>
         <meta charSet='utf-8' />
         <RouterHead />
-        <script src='https://code.iconify.design/iconify-icon/1.0.0/iconify-icon.min.js'></script>
-        <link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap' />
       </head>
       <body lang='en'>
         <RouterOutlet />

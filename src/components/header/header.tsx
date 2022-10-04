@@ -3,6 +3,7 @@ import { Link } from '@builder.io/qwik-city'
 import Button from '../button'
 import NavLink from '../nav-link'
 import clsx from 'clsx'
+import { ChevronDownIcon, ChevronUpIcon, CloseIcon, SegmentIcon } from '../icons/mdi'
 
 export default component$(() => {
   const state = useStore({
@@ -19,7 +20,7 @@ export default component$(() => {
               <img src='/img/logo/nefa.svg' class='w-24 xl:w-28' alt='Nefa Logo' />
             </Link>
             <button class='rounded-lg lg:hidden focus:outline-none focus:shadow-outline' onClick$={() => (state.open = !state.open)}>
-              <iconify-icon icon={state.open ? 'mdi:close' : 'mdi:segment'} width={24} height={24} />
+              {state.open ? <CloseIcon /> : <SegmentIcon />}
             </button>
           </div>
           <ul
@@ -36,8 +37,7 @@ export default component$(() => {
                 class='md:px-4 py-2 text-sm bg-transparent rounded-lg text-[#666666] hover:text-gray-900 focus:outline-none focus:shadow-outline flex items-center'
                 onClick$={() => (state.dropdownNavbar = !state.dropdownNavbar)}>
                 <span>Products</span>
-
-                <iconify-icon icon={state.dropdownNavbar ? 'mdi:chevron-up' : 'mdi:chevron-down'} width={24} height={24} />
+                {state.dropdownNavbar ? <ChevronUpIcon /> : <ChevronDownIcon />}
               </button>
               <transition name='transform-fade-down'>
                 {state.dropdownNavbar && (
