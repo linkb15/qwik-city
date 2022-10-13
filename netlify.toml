@@ -1,10 +1,13 @@
-[build]
-publish = "dist"
-command = "npm run build"
-
 [[edge_functions]]
 path = "/*"
 function = "entry.netlify-edge"
 
 [dev]
 framework = "#static"
+
+[build.environment]
+NPM_FLAGS = "--version" # prevent Netlify npm install
+
+[build]
+command = 'npx pnpm i --store=node_modules/.pnpm-store && npm run build'
+publish = 'dist'
