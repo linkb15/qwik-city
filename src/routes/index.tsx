@@ -10,7 +10,7 @@ import PartnerImage from '~/components/landing/partner-image'
 import ListItem from '~/components/landing/list-item'
 import TradingToolImage from '~/components/landing/trading-tool-image'
 import Step from '~/components/landing/step'
-import Swiper from '~/components/swiper'
+import Swiper from '~/components/my-swiper'
 import Accordion from '~/components/accordion'
 
 export default component$(() => {
